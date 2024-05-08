@@ -12,6 +12,4 @@ homepage = "https://github.com/your_username/simple_calculator"
 
 [project]
 python = "^3.9"
-
-[project]
 pytest = "^6.2.4"

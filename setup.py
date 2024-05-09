@@ -4,7 +4,7 @@ setup(
     name='simple_calculator',
     version='1.0',
     packages=find_packages(),
-    py_modules = [],
+    py_modules = ['__init__', 'calculator'],
     description='A simple calculator class with basic arithmetic operations',
     author='Your Name',
     author_email='your@email.com',
@@ -17,6 +17,6 @@ setup(
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
-        'Programming Language :: Python :: 3.9.13',
+        'Programming Language :: Python :: 3.9',
     ],
 )

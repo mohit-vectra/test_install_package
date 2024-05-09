@@ -4,7 +4,7 @@ setup(
     name='simple_calculator',
     version='1.0',
     packages=find_packages(),
-    py_modules = ['sample_calculator':['calculator.py']],
+    py_modules = {'sample_calculator':['calculator.py']},
     description='A simple calculator class with basic arithmetic operations',
     author='Your Name',
     author_email='your@email.com',

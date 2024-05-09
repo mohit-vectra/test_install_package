@@ -13,7 +13,7 @@ find = {}  # Scan the project directory with the default parameters
 name = "project"
 version = "0.0.1"
 authors = [
-  { name="your_name", email="your_email" },
+  { name="your_name", email="msmohit415@gmail.com" },
 ]
 description = "Sample project "
 readme = "README.md"

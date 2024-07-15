@@ -1,20 +1,27 @@
 name: Package Access Token
 
-on: [workflow_dispatch]
+on:
+  workflow_dispatch:
+    inputs:
+      artifact_url:
+        description: 'URL of the artifact to download'
+        required: true
 
 jobs:
-  generate-token:
+  download-artifact:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Generate Access Token
-        id: generate_token
-        run: echo "token=${{ secrets.PA_TOKEN }}" > token.txt
-
-      - name: Upload Token as Artifact
-        uses: actions/upload-artifact@v2
+      # Replace the existing generate_token step with a download-artifact step
+      - name: Download Artifact
+        uses: actions/download-artifact@v2
         with:
-          name: package-access-token
-          path: token.txt
+          name: package-access-token  # Name of the artifact to download
+          url: ${{ github.event.inputs.artifact_url }}  # URL of the artifact to download
+
+      # Add further steps as needed, e.g., using the downloaded token
+      - name: Use Artifact
+        run: |
+          cat package-access-token/token.txt  # Example command to display token content

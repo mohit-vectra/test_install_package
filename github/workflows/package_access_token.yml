@@ -1,0 +1,20 @@
+name: Package Access Token
+
+on: [workflow_dispatch]
+
+jobs:
+  generate-token:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Generate Access Token
+        id: generate_token
+        run: echo "token=${{ secrets.PA_TOKEN }}" > token.txt
+
+      - name: Upload Token as Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: package-access-token
+          path: token.txt

@@ -14,6 +14,9 @@ class Calculator:
             raise ValueError("Cannot divide by zero")
         return a / b
     def np_version(self):
-        print("Numpy version : ",np.__version__)
+        #print("Numpy version : ",np.__version__)
+        result = np.add(10, 20)
+        print(result)
+        return result
 
 

@@ -18,9 +18,3 @@ authors = [
 description = "Sample project"
 readme = "README.md"
 requires-python = ">=3.8"
-
-# List project dependencies here
-dependencies = [
-  "numpy>=2.0.0",  # Add the required version of numpy
-  "sympy>=1.10",   # Add the required version of sympy
-]

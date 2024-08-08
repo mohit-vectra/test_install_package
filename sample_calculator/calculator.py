@@ -13,7 +13,7 @@ class Calculator:
         if b == 0:
             raise ValueError("Cannot divide by zero")
         return a / b
-    def np_version(self):
+    def np_infor(self):
         #print("Numpy version : ",np.__version__)
         result = np.add(10, 20)
         print(result)

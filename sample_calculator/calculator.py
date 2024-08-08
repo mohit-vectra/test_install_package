@@ -1,4 +1,5 @@
 import numpy as np
+import sympy as sp
 class Calculator:
     def add(self, a, b):
         return a + b
@@ -19,4 +20,9 @@ class Calculator:
         print(result)
         return result
 
-
+    def symbolic_add(self, expr1, expr2):
+        # Use sympy to add two symbolic expressions
+        x, y = sp.symbols('x y')
+        result = sp.simplify(expr1 + expr2)
+        print("Symbolic add result: ", result)
+        return result

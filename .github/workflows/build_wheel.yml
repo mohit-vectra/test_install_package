@@ -35,4 +35,4 @@ jobs:
         git config --local user.email "github-actions@github.com"
         git config --local user.name "GitHub Action"
         git add .
-        git push https://Valgo2020:@github.com/Valgo2020/Hole-Sequencing-TSP.git
+        git push https://github.com/mohitVec/test_install_package.git

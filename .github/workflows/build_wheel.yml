@@ -34,5 +34,3 @@ jobs:
         git add wheelhouse/
         git commit -m "Add generated wheel files"
         git push https://github.com/mohitVec/test_install_package.git
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

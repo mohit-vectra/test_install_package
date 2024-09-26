@@ -30,12 +30,12 @@ jobs:
       - name: Build package
         run: python -m build
 
-      # Configure GitHub Packages credentials
+      # Configure credentials for GitHub Packages
       - name: Configure credentials for GitHub Packages
         run: |
           python -m pip install twine
-          echo "[pypi]" >> ~/.pypirc
-          echo "repository = https://github.com/mohit-vectra?tab=packages&repo_name=test_install_package" >> ~/.pypirc
+          echo "[github]" >> ~/.pypirc
+          echo "repository = https://upload.github.com/mohit-vectra/test_install_package/" >> ~/.pypirc
           echo "username = __token__" >> ~/.pypirc
           echo "password = ${{ secrets.GITHUB_TOKEN }}" >> ~/.pypirc
 
@@ -45,11 +45,4 @@ jobs:
           TWINE_USERNAME: __token__
           TWINE_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          python -m twine upload --repository-url https://upload.pypi.org/legacy/ dist/*
-
-      # Optionally upload the package as an artifact for download
-      - name: Upload package as artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: python-package
-          path: dist/*.whl
+          python -m twine upload --repository-url https://upload.github.com/mohit-vectra/test_install_package/ dist/*

@@ -44,6 +44,6 @@ jobs:
       - name: Publish to GitHub Packages
         env:
           TWINE_USERNAME: __token__
-          TWINE_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+          TWINE_PASSWORD: ${{ secrets.PACKAGE_UPLOAD }}
         run: |
           python -m twine upload --repository-url https://ghcr.io/mohit-vectra/test_install_package dist/*

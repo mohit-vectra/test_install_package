@@ -35,7 +35,7 @@ jobs:
         run: |
           python -m pip install twine
           echo "[pypi]" >> ~/.pypirc
-          echo "repository = https://upload.github.com/mohit-vectra/test_install_package/packages" >> ~/.pypirc
+          echo "repository = https://pypi.pkg.github.com/mohit-vectra" >> ~/.pypirc
           echo "username = __token__" >> ~/.pypirc
           echo "password = ${{ secrets.GITHUB_TOKEN }}" >> ~/.pypirc
       
@@ -45,5 +45,5 @@ jobs:
           TWINE_USERNAME: __token__
           TWINE_PASSWORD: ${{ secrets.PACKAGE_UPLOAD }}
         run: |
-          python -m twine upload --repository-url https://upload.github.com/mohit-vectra/test_install_package/packages dist/*
+          python -m twine upload --repository-url https://pypi.pkg.github.com/mohit-vectra dist/*
 

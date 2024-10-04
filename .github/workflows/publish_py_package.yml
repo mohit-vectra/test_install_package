@@ -8,42 +8,34 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout the repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Set up Python environment
       - name: Set up Python 3.x
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
 
-      # Install dependencies
       - name: Install dependencies
         run: pip install --upgrade pip setuptools wheel
 
-      # Install build tool
       - name: Install build tool
         run: pip install build
 
-      # Build the package (wheel and source distribution)
       - name: Build package
         run: python -m build
 
-      # Configure credentials for GitHub Packages
       - name: Configure credentials for GitHub Packages
         run: |
-          python -m pip install twine
-          echo "[pypi]" >> ~/.pypirc
-          echo "repository = https://pypi.pkg.github.com/mohit-vectra" >> ~/.pypirc
+          echo "[distutils]" > ~/.pypirc
+          echo "index-servers = github" >> ~/.pypirc
+          echo "[github]" >> ~/.pypirc
+          echo "repository = https://upload.github.com/mohit-vectra/test_install_package" >> ~/.pypirc
           echo "username = __token__" >> ~/.pypirc
-          echo "password = ${{ secrets.GITHUB_TOKEN }}" >> ~/.pypirc
+          echo "password = ${{ secrets.PACKAGE_UPLOAD }}" >> ~/.pypirc
       
-      # Publish the package to GitHub Packages
       - name: Publish to GitHub Packages
         env:
           TWINE_USERNAME: __token__
           TWINE_PASSWORD: ${{ secrets.PACKAGE_UPLOAD }}
-        run: |
-          python -m twine upload --repository-url https://pypi.pkg.github.com/mohit-vectra dist/*
-
+        run: python -m twine upload --repository-url https://upload.github.com/mohit-vectra/test_install_package dist/*

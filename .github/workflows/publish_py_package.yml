@@ -25,6 +25,9 @@ jobs:
       - name: Build package
         run: python -m build
 
+      - name: Install Twine
+        run: pip install twine  # Add this step to install twine
+
       - name: Configure credentials for GitHub Packages
         run: |
           echo "[distutils]" > ~/.pypirc

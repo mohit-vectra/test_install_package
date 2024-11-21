@@ -15,4 +15,4 @@ jobs:
       # Step 2: Simulate a possible error
       - name: Simulate Error
         run: |
-          echo "This command will fail intentionally." || exit 1  # Explicitly fail if the command is invalid
+          eho "This command will fail intentionally." || exit 1  # Explicitly fail if the command is invalid

@@ -1,7 +1,7 @@
 # Build123d
 
 [![docs](https://img.shields.io/badge/docs-passing-brightgreen.svg)](link-to-docs)
-[![Print Message](https://github.com/mohit-vectra/test_install_package/actions/workflows/print_msg.yml/badge.svg)](https://github.com/mohit-vectra/test_install_package/actions/workflows/print_msg.yml)
+[![Print Messages](https://github.com/mohit-vectra/test_install_package/actions/workflows/print_msg.yml/badge.svg)](https://github.com/mohit-vectra/test_install_package/actions/workflows/print_msg.yml)
 
 
 

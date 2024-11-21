@@ -5,6 +5,6 @@
 [![pylint](https://img.shields.io/badge/pylint-passing-brightgreen.svg)](link-to-pylint-results)
 [![codecov](https://img.shields.io/badge/codecov-96%25-brightgreen.svg)](link-to-codecov)
 
-Build123d is a python-based, parametric, boundary representation (BREP) modeling framework for 2D and 3D.
+Build123d is a python-based, parametric, boundary representation (BREP) modeling framework for 2D and 3Ds.
 
 ----

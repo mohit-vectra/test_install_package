@@ -9,5 +9,10 @@ jobs:
 
     steps:
       # Step 1: Print a message to the console
-      - name: Print Hello Message
-        run: eco "Hello, GitHub Actions! Workflow dispatched successfully."
+      #- name: Print Hello Message
+      #  run: echo "Hello, GitHub Actions! Workflow dispatched successfully."
+
+      # Step 2: Simulate a possible error
+      - name: Simulate Error
+        run: |
+          eco "This command will fail intentionally." || exit 1  # Explicitly fail if the command is invalid

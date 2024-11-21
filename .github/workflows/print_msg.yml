@@ -10,4 +10,4 @@ jobs:
     steps:
       # Step 1: Print a message to the console
       - name: Print Hello Message
-        run: echo "Hello, GitHub Actions! Workflow dispatched successfully."
+        run: eco "Hello, GitHub Actions! Workflow dispatched successfully."

@@ -1,0 +1,13 @@
+name: Print Message
+
+on:
+  workflow_dispatch: # Allows manual triggering of the workflow
+
+jobs:
+  print-message:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Print a message to the console
+      - name: Print Hello Message
+        run: echo "Hello, GitHub Actions! Workflow dispatched successfully."
